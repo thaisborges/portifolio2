@@ -16,5 +16,5 @@ O projeto é uma landing page do portfolio com agregador de links.
 <br>
 
 <p align="center">
-  <img alt=" projeto landing page" src="./assets/img/Site portifolio.png" width="100%">
+  <img alt=" projeto landing page" src="" width="100%">
 </p>

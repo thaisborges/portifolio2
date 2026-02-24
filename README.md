@@ -4,10 +4,10 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- HTML e CSS
+- HTML
+- TailwindCSS
 - JavaScript
 - Git e Github
-- Figma
 
 ## 💻 Projeto
 

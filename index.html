@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Thais Borges</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Audiowide&family=Bruno+Ace&family=Mulish:wght@200..1000&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-dark': '#05070A',
+                        'main-cyan': '#00d2ff',
+                        'dark-card': '#0F172A',
+                        'neon-blue': '#00D2FF',
+                        'logo-white': '#F2F2F0',
+                        'ice-white': '#F8FAFC',    // Branco neve
+                        'slate-gray': '#94A3B8',
+                    },
+                    fontFamily: {
+                        'bruno': ['"Bruno Ace"', 'sans-serif'],
+                        'mulish': ['Mulish', 'sans-serif'],
+                        'alfa': ['"Alfa Slab One"', 'serif'],
+                        'audiowide': ['Audiowide', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .header-link {
+                @apply text-[15px] font-mulish hover:text-main-cyan transition-all border-b-2 border-transparent hover:border-logo-white pb-1;
+            }
+
+            .social-btn {
+                @apply w-11 h-11 flex items-center justify-center border-2 border-logo-white rounded-full text-xl 
+                    hover:bg-main-cyan hover:text-bg-dark hover:scale-110 transition-all shadow-[0_0_15px_rgba(0,210,255,0.3)];
+            }
+
+            .service-card {
+                /* Adicionamos h-full e w-full para garantir o tamanho */
+                @apply group relative w-full aspect-square rounded-3xl overflow-hidden bg-cover bg-center flex flex-col items-center 
+                    justify-center p-6 text-center transition-all hover:scale-105 border border-transparent 
+                    hover:border-main-cyan shadow-xl;
+            }
+
+            .skill-card {
+                @apply flex flex-col items-center p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-dark-card/50 hover:-translate-y-2;
+            }
+            
+            .input-field {
+                @apply w-full p-4 bg-[#1f242d] border border-logo-white/30 rounded-xl 
+                    focus:border-main-cyan outline-none transition-all text-white;
+            }
+
+            .section-title {
+                @apply text-center font-alfa text-3xl mb-16 uppercase tracking-widest;
+            }
+        }
+
+        @layer utilities {
+            /* Efeito de Digitação */
+            .typing-text span::before {
+                content: "";
+                animation: words 20s infinite;
+            }
+
+            .typing-text span::after {
+                content: "";
+                @apply absolute h-20 border-l-2 border-red-500 right-[-10px] bg-bg-dark;
+                animation: cursor .8s infinite, typing 20s steps(15) infinite;
+                width: calc(100% + 13px);
+            }
+
+            @keyframes typing {
+                10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% { width: 0; }
+                5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% { width: calc(100% + 10px); }
+            }
+
+            @keyframes cursor { 
+                0%, 100% { border-color: transparent; } 
+                50% { border-color: #ff0000; } 
+            }
+
+            @keyframes words {
+                0%, 25% { content: 'Web Developer'; }
+                26%, 50% { content: 'Software Developer'; }
+                51%, 75% { content: 'UI/UX Designer'; }
+                76%, 100% { content: 'Ilustradora'; }
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-bg-dark text-white font-mulish overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 w-full z-[1000] flex justify-between items-center py-5 px-8 md:px-40 bg-bg-dark/90 backdrop-blur-sm shadow-md">
+        <a href="#" class="font-bruno text-2xl text-logo-white">THAIS BORGES</a>
+        
+        <nav class="hidden md:flex gap-12">
+            <a href="#" class="header-link">Início</a>
+            <a href="#services" class="header-link">Serviços</a>
+            <a href="#skills" class="header-link">Skills</a>
+            <a href="#contact" class="header-link">Contato</a>
+        </nav>
+        
+        <div id="menu-icon" class="md:hidden text-2xl cursor-pointer">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section Hero -->
+        <section class="relative min-h-[85vh] flex flex-col md:flex-row items-center justify-center py-32 px-10 md:px-36 rounded-b-[50px] md:rounded-b-[15%] overflow-hidden bg-[linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('./assets/img/BackgroundHero.png')] bg-cover bg-center shadow-2xl">
+            <div class="flex-1 z-10 text-center md:text-left">
+                <div class="typing-text mb-6">
+                    <h1 class="font-audiowide text-3xl md:text-5xl drop-shadow-[0_0_10px_#00d2ff]">Eu sou</h1>
+                    <span class="relative font-audiowide text-4xl md:text-6xl text-main-cyan block mt-2"></span>
+                </div>
+                <p class="text-lg md:text-xl max-w-lg mb-8 opacity-90">Transformando linhas de código e traços de design em soluções que facilitam a sua vida.</p>
+                
+                <div class="flex justify-center md:justify-start gap-6">
+                    <a href="https://www.linkedin.com/in/thais-borges-348526304" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/thais_fer.oficial/?pcs=0" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/thaisborges" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="flex-1 mt-12 md:mt-0 flex justify-center">
+                <img src="./assets/img/myphoto.png" alt="Thais Borges" class="w-52 h-64 md:w-72 md:h-96 object-cover rounded-[30%]">
+            </div>
+        </section>
+
+        <!-- Section Barra experiencia -->
+        <section class="bg-[#06191d] py-12 px-10 md:px-36">
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-44">
+                <div class="flex gap-12 md:gap-24">
+                    <div class="flex items-center gap-4">
+                        <h1 class="text-5xl font-audiowide text-main-cyan">3</h1>
+                        <p class="text-xs font-bold leading-tight w-20">ANOS DE EXPERIÊNCIA</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8 opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="./assets/img/html5-icon.svg" class="w-10 md:w-12" alt="HTML">
+                    <img src="./assets/img/javascript-icon.svg" class="w-10 md:w-12" alt="JS">
+                    <img src="./assets/img/tailwindcss-icon-svgrepo-com.svg" class="w-10 md:w-12" alt="Tailwind">
+                    <img src="./assets/img/reactjs-icon.svg" class="w-10 md:w-12" alt="React">
+                    <img src="./assets/img/python-icon.png" class="w-10 md:w-12" alt="Python">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Sobre mim -->
+        <section class="py-24 px-10 md:px-36 bg-[url('./assets/img/download(4).jfif')] bg-cover bg-fixed relative" id="sobre">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="relative z-10 max-w-3xl bg-bg-dark/80 p-10 rounded-3xl backdrop-blur-md border border-white/10">
+                <h1 class="font-alfa text-2xl mb-6 text-main-cyan">Sobre mim</h1>
+                <p class="text-lg leading-relaxed text-justify opacity-90">
+                    Acredito que a versatilidade é a chave para resolver os problemas reais de um mundo em constante mudança. Atuo no desenvolvimento de soluções que vão desde scripts de automação em Python até a construção de interfaces modernas com HTML, CSS e JavaScript. O que me diferencia é a capacidade de unir a visão analítica do desenvolvedor com a sensibilidade criativa do ilustrador.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section Serviços -->
+        <section class="py-24 px-10 md:px-36 bg-[#0a0a0a]" id="services">
+            <h2 class="section-title">Serviços</h2>
+
+            <div class="grid grid-cols- md:grid-cols-2 gap-8  max-w-2xl mx-auto justify-items-center">
+
+                <!-- Card Design -->
+                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-[300px]">
+                    <img src="./assets/img/download (1).jfif" class="absolute inset-0 w-full h-full object-cover" alt="Design Gráfico">
+
+                    <div class="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-all duration-500"></div>
+
+                    <div class="relative z-10 px-4 group-hover:-translate-y-3 transition-transform duration-500">
+                        <i class="fa-solid fa-palette text-4xl text-main-cyan mb-4"></i>
+                        <h4 class="text-xl font-bold mb-4 font-audiowide tracking-tight h-8">Design Gráfico</h4>
+                        <p class="text-sm text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            Identidades visuais e logotipos que comunicam a essência da sua marca.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Card Front-End -->
+                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-[300px]">
+                    <img src="./assets/img/download (1).jfif" class="absolute inset-0 w-full h-full object-cover" alt="Front-end">
+                    
+                    <div class="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-all duration-500"></div>
+                    
+                    <div class="relative z-10 px-4 group-hover:-translate-y-3 transition-transform duration-500">
+                        <i class="fa-solid fa-code text-4xl text-main-cyan mb-4"></i>
+                        <h4 class="text-xl font-bold mb-4 font-audiowide tracking-tight h-8">Front-End</h4>
+                        <p class="text-sm text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            Desenvolvimento de interfaces modernas, responsivas e de alta performance, utilizando tecnologias como React e Tailwind.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card UI / UX Design -->
+                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-[300px]">
+                    <img src="./assets/img/download (1).jfif" class="absolute inset-0 w-full h-full object-cover" alt="Front-end">
+                    
+                    <div class="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-all duration-500"></div>
+                    
+                    <div class="relative z-10 px-4 group-hover:-translate-y-3 transition-transform duration-500">
+                        <i class="fa-solid fa-pen-ruler text-4xl text-main-cyan mb-4"></i>
+                        <h4 class="text-xl font-bold mb-4 font-audiowide tracking-tight h-8">UI / UX Design</h4>
+                        <p class="text-sm text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            Otimização da experiência do usuário com soluções inovadoras
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card Automação Python -->
+                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-[300px]">
+                    <img src="./assets/img/download (1).jfif" class="absolute inset-0 w-full h-full object-cover" alt="Front-end">
+                    
+                    <div class="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-all duration-500"></div>
+                    
+                    <div class="relative z-10 px-4 group-hover:-translate-y-3 transition-transform duration-500">
+                        <i class="fa-solid fa-robot text-4xl text-main-cyan mb-4"></i>
+                        <h4 class="text-xl font-bold mb-4 font-audiowide tracking-tight h-8">Automação Python</h4>
+                        <p class="text-sm text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            Desenvolvimento de scripts para automatizar tarefas repetitivas e processamento de dados, transformando processos manuais em fluxos ágeis.
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Section Skills -->
+        <section class="py-24 px-10 md:px-36 bg-[#0a0a0a]" id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div class="skill-card"><img src="./assets/img/base-de-dados.png" class="w-12 h-12 mb-4 "><span>SQL</span></div>
+                <div class="skill-card"><img src="./assets/img/postgre_5968342.png" class="w-12 h-12 mb-4"><span>PostgreSQL</span></div>
+                <div class="skill-card"><img src="./assets/img/javascript-icon.svg" class="w-12 h-12 mb-4"><span>Javascript</span></div>
+                <div class="skill-card"><img src="./assets/img/html5-icon.svg" class="w-12 h-12 mb-4"><span>HTML 5</span></div>
+                <div class="skill-card"><img src="./assets/img/css-icon.svg" class="w-12 h-12 mb-4"><span>CSS 3</span></div>
+                <div class="skill-card"><img src="./assets/img/reactjs-icon.svg" class="w-12 h-12 mb-4"><span>ReactJS</span></div>
+                <div class="skill-card"><img src="./assets/img/python-icon.png" class="w-12 h-12 mb-4"><span>Python</span></div>
+                <div class="skill-card"><img src="./assets/img/github-icon.svg" class="w-12 h-12 mb-4"><span>Github</span></div>
+                <div class="skill-card"><img src="./assets/img/tailwind-icon.svg" class="w-12 h-12 mb-4"><span>Tailwind</span></div>
+                <div class="skill-card"><img src="./assets/img/bootstrap-icon.svg" class="w-12 h-12 mb-4"><span>Bootstrap</span></div>
+            </div>
+        </section>
+
+        <!-- Section Contato -->
+        <section class="py-24 px-10 md:px-[25%]" id="contact">
+            <h2 class="section-title text-main-cyan">Contato</h2>
+            <form action="https://formsubmit.co/thaisfborges3@gmail.com" method="POST" class="space-y-6">
+
+                <div class="flex flex-col gap-6">
+                    <input type="text" name="name" placeholder="Nome" class="input-field w-full" required>
+                    <input type="email" name="email" placeholder="E-mail" class="input-field w-full" required>
+                    <input type="tel" name="phone" placeholder="Celular/WatsApp" class="input-field w-full" required>
+                </div>
+                <textarea name="message" rows="6" placeholder="Sua mensagem" class="input-field resize-none w-full" required></textarea>
+                <div class="text-center">
+                    <button type="submit" class="px-12 py-4 bg-main-cyan text-bg-dark font-bold rounded-full hover:shadow-[0_0_25px_#00d2ff] hover:scale-105 transition-all uppercase tracking-widest">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black flex flex-col items-center gap-6 border-t border-white/5">
+        <div class="flex gap-6">
+            <a href="https://www.linkedin.com/in/thais-borges-348526304" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/thais_fer.oficial/?pcs=0" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/thaisborges" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p class="text-xs opacity-50 font-bold uppercase tracking-widest">
+            <i class="fa-solid fa-copyright"></i> 2026 Thais Borges | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        // Toggle Menu Mobile
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.querySelector('nav');
+
+            menuIcon.onclick = () => {
+                    navbar.classList.toggle('hidden');
+                    navbar.classList.toggle('flex');
+                    navbar.classList.toggle('flex-col');
+                    navbar.classList.toggle('absolute');
+                    navbar.classList.toggle('top-20');
+                    navbar.classList.toggle('left-0');
+                    navbar.classList.toggle('w-full');
+                    navbar.classList.toggle('bg-bg-dark/95');
+                    navbar.classList.toggle('p-10');
+                    navbar.classList.toggle('text-center');
+            };
+    </script>
+</body>
+</html>

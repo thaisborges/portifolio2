@@ -1,0 +1,25 @@
+{
+  "name": "portifolio2",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Site</h1>",
+  "keywords": [],
+  "homepage": "https://github.com/thaisborges/portifolio2#readme",
+  "bugs": {
+    "url": "https://github.com/thaisborges/portifolio2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thaisborges/portifolio2.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./style.css -o ./dist/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

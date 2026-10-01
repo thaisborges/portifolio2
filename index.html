@@ -3,106 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Portfolio | Thais Borges</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css">
 
+    <!-- Font Awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Audiowide&family=Bruno+Ace&family=Mulish:wght@200..1000&display=swap" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'bg-dark': '#05070A',
-                        'main-cyan': '#00d2ff',
-                        'dark-card': '#0F172A',
-                        'neon-blue': '#00D2FF',
-                        'logo-white': '#F2F2F0',
-                        'ice-white': '#F8FAFC',    // Branco neve
-                        'slate-gray': '#94A3B8',
-                    },
-                    fontFamily: {
-                        'bruno': ['"Bruno Ace"', 'sans-serif'],
-                        'mulish': ['Mulish', 'sans-serif'],
-                        'alfa': ['"Alfa Slab One"', 'serif'],
-                        'audiowide': ['Audiowide', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="./style.css">
 
-    <style type="text/tailwindcss">
-        @layer components {
-            .header-link {
-                @apply text-[15px] font-mulish hover:text-main-cyan transition-all border-b-2 border-transparent hover:border-logo-white pb-1;
-            }
-
-            .social-btn {
-                @apply w-11 h-11 flex items-center justify-center border-2 border-logo-white rounded-full text-xl 
-                    hover:bg-main-cyan hover:text-bg-dark hover:scale-110 transition-all shadow-[0_0_15px_rgba(0,210,255,0.3)];
-            }
-
-            .service-card {
-                /* Adicionamos h-full e w-full para garantir o tamanho */
-                @apply group relative w-full aspect-square rounded-3xl overflow-hidden bg-cover bg-center flex flex-col items-center 
-                    justify-center p-6 text-center transition-all hover:scale-105 border border-transparent 
-                    hover:border-main-cyan shadow-xl;
-            }
-
-            .skill-card {
-                @apply flex flex-col items-center p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-dark-card/50 hover:-translate-y-2;
-            }
-            
-            .input-field {
-                @apply w-full p-4 bg-[#1f242d] border border-logo-white/30 rounded-xl 
-                    focus:border-main-cyan outline-none transition-all text-white;
-            }
-
-            .section-title {
-                @apply text-center font-alfa text-3xl mb-16 uppercase tracking-widest;
-            }
-        }
-
-        @layer utilities {
-            /* Efeito de Digitação */
-            .typing-text span::before {
-                content: "";
-                animation: words 20s infinite;
-            }
-
-            .typing-text span::after {
-                content: "";
-                @apply absolute h-20 border-l-2 border-red-500 right-[-10px] bg-bg-dark;
-                animation: cursor .8s infinite, typing 20s steps(15) infinite;
-                width: calc(100% + 13px);
-            }
-
-            @keyframes typing {
-                10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% { width: 0; }
-                5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% { width: calc(100% + 10px); }
-            }
-
-            @keyframes cursor { 
-                0%, 100% { border-color: transparent; } 
-                50% { border-color: #ff0000; } 
-            }
-
-            @keyframes words {
-                0%, 25% { content: 'Web Developer'; }
-                26%, 50% { content: 'Software Developer'; }
-                51%, 75% { content: 'UI/UX Designer'; }
-                76%, 100% { content: 'Ilustradora'; }
-            }
-        }
-    </style>
 </head>
 
-<body class="bg-bg-dark text-white font-mulish overflow-x-hidden">
+<body class="bg-bg-dark text-white font-['Mulish',sans-serif] overflow-x-hidden">
 
-    <header class="fixed top-0 left-0 w-full z-[1000] flex justify-between items-center py-5 px-8 md:px-40 bg-bg-dark/90 backdrop-blur-sm shadow-md">
+    <header class="fixed top-0 left-0 w-full z-1000 flex justify-between items-center py-5 px-8 md:px-40 bg-bg-dark/90 backdrop-blur-sm shadow-md">
         <a href="#" class="font-bruno text-2xl text-logo-white">THAIS BORGES</a>
         
         <nav class="hidden md:flex gap-12">
@@ -176,7 +96,7 @@
             <div class="grid grid-cols- md:grid-cols-2 gap-8  max-w-2xl mx-auto justify-items-center">
 
                 <!-- Card Design -->
-                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-[300px]">
+                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-75">
                     <img src="./assets/img/download (1).jfif" class="absolute inset-0 w-full h-full object-cover" alt="Design Gráfico">
 
                     <div class="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-all duration-500"></div>
@@ -192,7 +112,7 @@
                 </div>
 
                 <!-- Card Front-End -->
-                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-[300px]">
+                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-75">
                     <img src="./assets/img/download (1).jfif" class="absolute inset-0 w-full h-full object-cover" alt="Front-end">
                     
                     <div class="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-all duration-500"></div>
@@ -207,7 +127,7 @@
                 </div>
 
                 <!-- Card UI / UX Design -->
-                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-[300px]">
+                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-75">
                     <img src="./assets/img/download (1).jfif" class="absolute inset-0 w-full h-full object-cover" alt="Front-end">
                     
                     <div class="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-all duration-500"></div>
@@ -222,7 +142,7 @@
                 </div>
 
                 <!-- Card Automação Python -->
-                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-[300px]">
+                <div class="group relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-start pt-16 p-6 text-center transition-all hover:scale-105 border border-transparent hover:border-main-cyan shadow-xl max-w-75">
                     <img src="./assets/img/download (1).jfif" class="absolute inset-0 w-full h-full object-cover" alt="Front-end">
                     
                     <div class="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-all duration-500"></div>
@@ -258,18 +178,42 @@
         </section>
 
         <!-- Section Contato -->
+
         <section class="py-24 px-10 md:px-[25%]" id="contact">
-            <h2 class="section-title text-main-cyan">Contato</h2>
-            <form action="https://formsubmit.co/thaisfborges3@gmail.com" method="POST" class="space-y-6">
+
+            <h2 class="text-center font-['Alfa_Slab+One',serif] text-3xl mb-16 uppercase tracking-widest text-[#00d2ff]">Contato</h2>
+
+            <form 
+                action="https://formsubmit.co/thaisfborges3@gmail.com" 
+                method="POST" 
+                class="space-y-6"
+            >   
+                <input 
+                    type="hidden" 
+                    name="_next" 
+                    value="https://thaisborges.github.io/portifolio2/sucesso.html"
+                >
 
                 <div class="flex flex-col gap-6">
-                    <input type="text" name="name" placeholder="Nome" class="input-field w-full" required>
-                    <input type="email" name="email" placeholder="E-mail" class="input-field w-full" required>
-                    <input type="tel" name="phone" placeholder="Celular/WatsApp" class="input-field w-full" required>
+
+                    <input type="text" name="name" placeholder="Nome" class="w-full p-4 bg-[#1f242d] border border-[#F2F2F0]/30 rounded-xl focus:border-[#00d2ff] outline-none transition-all text-white" required>
+
+                    <input type="email" name="email" placeholder="E-mail" class="w-full p-4 bg-[#1f242d] border border-[#F2F2F0]/30 rounded-xl focus:border-[#00d2ff] outline-none transition-all text-white" required>
+
+                    <input type="tel" name="phone" placeholder="Celular/WatsApp" class="w-full p-4 bg-[#1f242d] border border-[#F2F2F0]/30 rounded-xl focus:border-[#00d2ff] outline-none transition-all text-white" required>
+
                 </div>
-                <textarea name="message" rows="6" placeholder="Sua mensagem" class="input-field resize-none w-full" required></textarea>
+                
+                <textarea 
+                    name="message" 
+                    rows="6" 
+                    placeholder="Sua mensagem" 
+                    class="w-full p-4 bg-[#1f242d] border border-[#F2F2F0]/30 rounded-xl focus:border-[#00d2ff] outline-none transition-all text-white resize-none" 
+                    required
+                ></textarea>
+
                 <div class="text-center">
-                    <button type="submit" class="px-12 py-4 bg-main-cyan text-bg-dark font-bold rounded-full hover:shadow-[0_0_25px_#00d2ff] hover:scale-105 transition-all uppercase tracking-widest">Enviar</button>
+                    <button type="submit" class="px-12 py-4 bg-[#00d2ff] text-[#05070A] font-bold rounded-full hover:shadow-[0_0_25px_#00d2ff] hover:scale-105 transition-all uppercase tracking-widest">Enviar</button>
                 </div>
             </form>
         </section>

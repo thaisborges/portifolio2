@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+    --bg-dark: #05070A;
+    --main-cyan: #00d2ff;
+    --dark-card: #0F172A;
+    --logo-white: #F2F2F0;
+}
+
+/* Fontes */
+.font-mulish {
+    font-family: "Mulish", sans-serif;
+}
+
+.font-bruno {
+    font-family: "Bruno Ace", sans-serif;
+}
+
+.font-alfa {
+    font-family: "Alfa Slab One", serif;
+}
+
+.font-audiowide {
+    font-family: "Audiowide", sans-serif;
+}
+
+/* Cores personalizadas */
+.bg-bg-dark {
+    background-color: var(--bg-dark);
+}
+
+.text-main-cyan {
+    color: var(--main-cyan);
+}
+
+.text-logo-white {
+    color: var(--logo-white);
+}
+
+.text-bg-dark {
+    color: var(--bg-dark);
+}
+
+/* Animação de digitação */
+
+.typing-text span::before {
+    content: "";
+    animation: words 20s infinite;
+}
+
+.typing-text span::after {
+    content: "";
+    position: absolute;
+    height: 5rem;
+    border-left: 2px solid #ff0000;
+    right: -10px;
+    background: var(--bg-dark);
+    animation:
+        cursor .8s infinite,
+        typing 20s steps(15) infinite;
+    width: calc(100% + 13px);
+}
+
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 10px);
+    }
+}
+
+@keyframes cursor {
+    0%, 100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #ff0000;
+    }
+}
+
+@keyframes words {
+    0%, 25% {
+        content: "Web Developer";
+    }
+
+    26%, 50% {
+        content: "Software Developer";
+    }
+
+    51%, 75% {
+        content: "UI/UX Designer";
+    }
+
+    76%, 100% {
+        content: "Ilustradora";
+    }
+}
